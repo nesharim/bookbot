@@ -16,3 +16,13 @@ def count_character_occurences(document):
 
     return chars
 
+def sorted_chars_list(chars_count):
+    chars_list = []
+    for key, val in chars_count.items():
+        chars_list.append({"char": key, "num": val})
+
+    chars_list.sort(reverse=True, key=__sort_on)
+    return chars_list
+
+def __sort_on(items):
+    return items["num"]
